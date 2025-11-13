@@ -92,6 +92,12 @@ REGISTERS = {
     "minimum_soc_ongrid": {"address": 46611, "count": 1, "type": "u16", "scale": 1, "unit": "%", "rw": True},
     # "work_mode": {"address": 49203, "count": 1, "type": "u16", "scale": 1, "rw": True},
     "network_status": {"address": 49240, "count": 1, "type": "u16", "scale": 1},
+
+    
+    "power_on": {"address": 49077, "count": 1, "type": "u16", "rw": True},
+    "power_off": {"address": 49078, "count": 1, "type": "u16", "rw": True},
+    "system_power_state": {"address": 49228, "count": 1, "type": "u16"},
+
 }
 
 # Sensor definitions for Home Assistant
@@ -438,6 +444,12 @@ SELECT_DEFINITIONS = {
             3: "Force Charge",
         },
     },
+    "system_power_state": {
+        "name": "Power State",
+        "device_class": "power",
+        "icon": "mdi:power",
+        "state_class": "measurement",
+        },
 }
 
 # Number entity definitions for Home Assistant
